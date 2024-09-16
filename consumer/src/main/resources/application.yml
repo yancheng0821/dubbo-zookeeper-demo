@@ -1,0 +1,11 @@
+dubbo:
+  application:
+    name: dubbo-consumer  # 消费者应用名称
+  registry:
+    address: zookeeper://127.0.0.1:2181  # 注册中心地址，使用 Zookeeper
+  consumer:
+    check: false  # 在启动时不强制检查服务提供者是否可用，适合开发环境
+  scan:
+    base-packages: com.example.consumer  # 指定要扫描的包路径，用于发现 @DubboReference 注解
+server:
+  port: 8078
